@@ -88,43 +88,59 @@
     </tr>
     <tr>
         <td>5:45 AM - 6:30 AM</td>
-        <td>Homework for Monday's subjects</td>
+        <td>English</td>
+        <td>English</td>
+        <td>English</td>
+        <td>English</td>
+        <td>English</td>
+    </tr>
+    <tr>
+        <td>7:00 PM - 7:45 PM</td>
+        <td>Lang1</td>
+        <td>Lang2</td>
+        <td>Lang3</td>
+        <td>Lang1</td>
+        <td>Lang2</td>
+    </tr>
+    <tr>
+        <td>7:45 PM - 8:30 PM</td>
+        <td>Maths</td>
+        <td>History</td>
+        <td>Physics</td>
+        <td>Biology</td>
+        <td>Chemistry</td>
+    </tr>
+    <tr>
+        <td>8:30 PM - 9:15 PM</td>
+        <td>English</td>
+        <td>English</td>
+        <td>English</td>
+        <td>English</td>
+        <td>English</td>
+    </tr>
+    <tr>
+        <td>9:15 PM - 10:00 PM</td>
         <td>Homework for Tuesday's subjects</td>
         <td>Homework for Wednesday's subjects</td>
         <td>Homework for Thursday's subjects</td>
         <td>Homework for Friday's subjects</td>
-    </tr>
-    <tr>
-        <td>7:00 PM - 8:00 PM</td>
-        <td>Homework for Tuesday's subjects</td>
-        <td>Homework for Wednesday's subjects</td>
-        <td>Homework for Thursday's subjects</td>
-        <td>Homework for Friday's subjects</td>
         <td>Homework for Monday's subjects</td>
     </tr>
     <tr>
-        <td>8:00 PM - 8:30 PM</td>
-        <td>Review notes from Monday</td>
-        <td>Review notes from Tuesday</td>
-        <td>Review notes from Wednesday</td>
-        <td>Review notes from Thursday</td>
-        <td>Review notes from Friday</td>
+        <td>10:00 PM - 10:45 PM</td>
+        <td>Break</td>
+        <td>Break</td>
+        <td>Break</td>
+        <td>Break</td>
+        <td>Break</td>
     </tr>
     <tr>
-        <td>8:30 PM - 9:00 PM</td>
-        <td>Study History</td>
-        <td>Study Biology</td>
-        <td>Study Chemistry</td>
+        <td>10:45 PM - 12:00 AM</td>
         <td>Study Maths</td>
         <td>Study History</td>
-    </tr>
-    <tr>
-        <td>9:00 PM - 10:00 PM</td>
-        <td>Study Physics and Biology</td>
-        <td>Study Maths and Chemistry</td>
-        <td>Study Maths and History</td>
-        <td>Study Physics and Biology</td>
-        <td>Study Maths and Physics</td>
+        <td>Study Physics</td>
+        <td>Study Biology</td>
+        <td>Study Chemistry</td>
     </tr>
 </table>
 
@@ -165,49 +181,69 @@
         <td>Study Chemistry</td>
         <td>Self-test and quiz on Chemistry</td>
     </tr>
+    <tr>
+        <td>10:00 PM - 10:45 PM</td>
+        <td>Break</td>
+        <td>Break</td>
+    </tr>
+    <tr>
+        <td>10:45 PM - 12:00 AM</td>
+        <td>Study Maths</td>
+        <td>Study History</td>
+    </tr>
 </table>
 
 <script>
     const timetable = {
         "Monday": [
             { time: "5:00 AM - 5:45 AM", subject: "Maths" },
-            { time: "5:45 AM - 6:30 AM", subject: "Homework for Monday's subjects" },
-            { time: "7:00 PM - 8:00 PM", subject: "Homework for Tuesday's subjects" },
-            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Monday" },
-            { time: "8:30 PM - 9:00 PM", subject: "Study History" },
-            { time: "9:00 PM - 10:00 PM", subject: "Study Physics and Biology" },
+            { time: "5:45 AM - 6:30 AM", subject: "English" },
+            { time: "7:00 PM - 7:45 PM", subject: "Lang1" },
+            { time: "7:45 PM - 8:30 PM", subject: "Maths" },
+            { time: "8:30 PM - 9:15 PM", subject: "English" },
+            { time: "9:15 PM - 10:00 PM", subject: "Homework for Tuesday's subjects" },
+            { time: "10:00 PM - 10:45 PM", subject: "Break" },
+            { time: "10:45 PM - 12:00 AM", subject: "Study Maths" }
         ],
         "Tuesday": [
             { time: "5:00 AM - 5:45 AM", subject: "History" },
-            { time: "5:45 AM - 6:30 AM", subject: "Homework for Tuesday's subjects" },
-            { time: "7:00 PM - 8:00 PM", subject: "Homework for Wednesday's subjects" },
-            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Tuesday" },
-            { time: "8:30 PM - 9:00 PM", subject: "Study Biology" },
-            { time: "9:00 PM - 10:00 PM", subject: "Study Maths and Chemistry" },
+            { time: "5:45 AM - 6:30 AM", subject: "English" },
+            { time: "7:00 PM - 7:45 PM", subject: "Lang2" },
+            { time: "7:45 PM - 8:30 PM", subject: "History" },
+            { time: "8:30 PM - 9:15 PM", subject: "English" },
+            { time: "9:15 PM - 10:00 PM", subject: "Homework for Wednesday's subjects" },
+            { time: "10:00 PM - 10:45 PM", subject: "Break" },
+            { time: "10:45 PM - 12:00 AM", subject: "Study History" }
         ],
         "Wednesday": [
             { time: "5:00 AM - 5:45 AM", subject: "Physics" },
-            { time: "5:45 AM - 6:30 AM", subject: "Homework for Wednesday's subjects" },
-            { time: "7:00 PM - 8:00 PM", subject: "Homework for Thursday's subjects" },
-            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Wednesday" },
-            { time: "8:30 PM - 9:00 PM", subject: "Study Chemistry" },
-            { time: "9:00 PM - 10:00 PM", subject: "Study Maths and History" },
+            { time: "5:45 AM - 6:30 AM", subject: "English" },
+            { time: "7:00 PM - 7:45 PM", subject: "Lang3" },
+            { time: "7:45 PM - 8:30 PM", subject: "Physics" },
+            { time: "8:30 PM - 9:15 PM", subject: "English" },
+            { time: "9:15 PM - 10:00 PM", subject: "Homework for Thursday's subjects" },
+            { time: "10:00 PM - 10:45 PM", subject: "Break" },
+            { time: "10:45 PM - 12:00 AM", subject: "Study Physics" }
         ],
         "Thursday": [
             { time: "5:00 AM - 5:45 AM", subject: "Biology" },
-            { time: "5:45 AM - 6:30 AM", subject: "Homework for Thursday's subjects" },
-            { time: "7:00 PM - 8:00 PM", subject: "Homework for Friday's subjects" },
-            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Thursday" },
-            { time: "8:30 PM - 9:00 PM", subject: "Study Maths" },
-            { time: "9:00 PM - 10:00 PM", subject: "Study Physics and Biology" },
+            { time: "5:45 AM - 6:30 AM", subject: "English" },
+            { time: "7:00 PM - 7:45 PM", subject: "Lang1" },
+            { time: "7:45 PM - 8:30 PM", subject: "Biology" },
+            { time: "8:30 PM - 9:15 PM", subject: "English" },
+            { time: "9:15 PM - 10:00 PM", subject: "Homework for Friday's subjects" },
+            { time: "10:00 PM - 10:45 PM", subject: "Break" },
+            { time: "10:45 PM - 12:00 AM", subject: "Study Biology" }
         ],
         "Friday": [
             { time: "5:00 AM - 5:45 AM", subject: "Chemistry" },
-            { time: "5:45 AM - 6:30 AM", subject: "Homework for Friday's subjects" },
-            { time: "7:00 PM - 8:00 PM", subject: "Homework for Monday's subjects" },
-            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Friday" },
-            { time: "8:30 PM - 9:00 PM", subject: "Study History" },
-            { time: "9:00 PM - 10:00 PM", subject: "Study Maths and Physics" },
+            { time: "5:45 AM - 6:30 AM", subject: "English" },
+            { time: "7:00 PM - 7:45 PM", subject: "Lang2" },
+            { time: "7:45 PM - 8:30 PM", subject: "Chemistry" },
+            { time: "8:30 PM - 9:15 PM", subject: "English" },
+            { time: "9:15 PM - 10:00 PM", subject: "Homework for Monday's subjects" },
+            { time: "10:00 PM - 10:45 PM", subject: "Break" },
+            { time: "10:45 PM - 12:00 AM", subject: "Study Chemistry" }
         ],
         "Saturday": [
             { time: "7:00 AM - 9:00 AM", subject: "Free time for personal activities and breakfast" },
@@ -216,6 +252,8 @@
             { time: "7:00 PM - 8:00 PM", subject: "Study Physics" },
             { time: "8:00 PM - 9:00 PM", subject: "Study Biology" },
             { time: "9:00 PM - 10:00 PM", subject: "Study Chemistry" },
+            { time: "10:00 PM - 10:45 PM", subject: "Break" },
+            { time: "10:45 PM - 12:00 AM", subject: "Study Maths" }
         ],
         "Sunday": [
             { time: "7:00 AM - 9:00 AM", subject: "Free time for personal activities and breakfast" },
@@ -224,76 +262,37 @@
             { time: "7:00 PM - 8:00 PM", subject: "Self-test and quiz on Physics" },
             { time: "8:00 PM - 9:00 PM", subject: "Self-test and quiz on Biology" },
             { time: "9:00 PM - 10:00 PM", subject: "Self-test and quiz on Chemistry" },
+            { time: "10:00 PM - 10:45 PM", subject: "Break" },
+            { time: "10:45 PM - 12:00 AM", subject: "Study History" }
         ]
     };
 
     function getCurrentSubject() {
         const now = new Date();
-        const day = now.toLocaleDateString('en-US', { weekday: 'long' });
+        const day = now.toLocaleString('en-US', { weekday: 'long' });
         const hours = now.getHours();
         const minutes = now.getMinutes();
+        const time = hours + ":" + (minutes < 10 ? "0" + minutes : minutes);
+        const dayTimetable = timetable[day] || [];
 
-        let currentSubject = "No study time at the moment";
+        for (let i = 0; i < dayTimetable.length; i++) {
+            const [start, end] = dayTimetable[i].time.split(' - ').map(t => t.trim());
+            const startTime = new Date();
+            const endTime = new Date();
+            [startTime.setHours(...start.split(':').map(Number)), startTime.setSeconds(0)];
+            [endTime.setHours(...end.split(':').map(Number)), endTime.setSeconds(0)];
 
-        if (timetable[day]) {
-            timetable[day].forEach(slot => {
-                const [startTime, endTime] = slot.time.split(" - ").map(t => {
-                    const [hour, minute, period] = t.match(/(\d+):(\d+)\s?(AM|PM)/i).slice(1);
-                    return {
-                        hour: period.toLowerCase() === "pm" && hour !== "12" ? parseInt(hour) + 12 : parseInt(hour),
-                        minute: parseInt(minute)
-                    };
-                });
-
-                const start = startTime.hour * 60 + startTime.minute;
-                const end = endTime.hour * 60 + endTime.minute;
-                const nowMinutes = hours * 60 + minutes;
-
-                if (nowMinutes >= start && nowMinutes <= end) {
-                    currentSubject = slot.subject;
-                }
-            });
+            if (now >= startTime && now <= endTime) {
+                return dayTimetable[i].subject;
+            }
         }
-
-        document.getElementById("currentSubject").textContent = currentSubject;
-
-        // Send notification
-        if (currentSubject !== "No study time at the moment") {
-            sendNotification(currentSubject);
-        }
+        return "No current subject";
     }
 
-    function sendNotification(subject) {
-        if (Notification.permission === "granted") {
-            new Notification("Current Study Subject", {
-                body: subject,
-                icon: "https://example.com/notification-icon.png" // Optional: URL to an icon image
-            });
-        } else {
-            console.log("Notification permission not granted.");
-        }
-    }
-
-    function requestNotificationPermission() {
-        if (Notification.permission !== "granted" && Notification.permission !== "denied") {
-            Notification.requestPermission().then(permission => {
-                console.log(`Notification permission status: ${permission}`);
-                if (permission === "granted") {
-                    sendNotification("Notifications enabled! You will be notified about your study subjects.");
-                }
-            }).catch(err => {
-                console.error("Notification permission request error:", err);
-            });
-        } else {
-            console.log(`Notification permission already ${Notification.permission}.`);
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        requestNotificationPermission();
-        getCurrentSubject();
-        setInterval(getCurrentSubject, 60000); // Update every minute
-    });
+    document.getElementById('currentSubject').textContent = getCurrentSubject();
+    setInterval(() => {
+        document.getElementById('currentSubject').textContent = getCurrentSubject();
+    }, 60000); // Update every minute
 </script>
 
 </body>
