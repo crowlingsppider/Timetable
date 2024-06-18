@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        #currentSubject {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 80%;
+            max-width: 1000px;
+            margin: 20px 0;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        td {
+            font-size: 1em;
+        }
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+            th, td {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Current Subject to Study</h2>
+<p id="currentSubject">Loading...</p>
+
+<h2>Weekday Timetable (Monday to Friday)</h2>
+<table>
+    <tr>
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+    </tr>
+    <tr>
+        <td>5:00 AM - 5:45 AM</td>
+        <td>Maths</td>
+        <td>History</td>
+        <td>Physics</td>
+        <td>Biology</td>
+        <td>Chemistry</td>
+    </tr>
+    <tr>
+        <td>5:45 AM - 6:30 AM</td>
+        <td>Homework for Monday's subjects</td>
+        <td>Homework for Tuesday's subjects</td>
+        <td>Homework for Wednesday's subjects</td>
+        <td>Homework for Thursday's subjects</td>
+        <td>Homework for Friday's subjects</td>
+    </tr>
+    <tr>
+        <td>7:00 PM - 8:00 PM</td>
+        <td>Homework for Tuesday's subjects</td>
+        <td>Homework for Wednesday's subjects</td>
+        <td>Homework for Thursday's subjects</td>
+        <td>Homework for Friday's subjects</td>
+        <td>Homework for Monday's subjects</td>
+    </tr>
+    <tr>
+        <td>8:00 PM - 8:30 PM</td>
+        <td>Review notes from Monday</td>
+        <td>Review notes from Tuesday</td>
+        <td>Review notes from Wednesday</td>
+        <td>Review notes from Thursday</td>
+        <td>Review notes from Friday</td>
+    </tr>
+    <tr>
+        <td>8:30 PM - 9:00 PM</td>
+        <td>Study History</td>
+        <td>Study Biology</td>
+        <td>Study Chemistry</td>
+        <td>Study Maths</td>
+        <td>Study History</td>
+    </tr>
+    <tr>
+        <td>9:00 PM - 10:00 PM</td>
+        <td>Study Physics and Biology</td>
+        <td>Study Maths and Chemistry</td>
+        <td>Study Maths and History</td>
+        <td>Study Physics and Biology</td>
+        <td>Study Maths and Physics</td>
+    </tr>
+</table>
+
+<h2>Weekend Timetable (Saturday and Sunday)</h2>
+<table>
+    <tr>
+        <th>Time</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+    </tr>
+    <tr>
+        <td>7:00 AM - 9:00 AM</td>
+        <td>Free time for personal activities and breakfast</td>
+        <td>Free time for personal activities and breakfast</td>
+    </tr>
+    <tr>
+        <td>9:00 AM - 10:00 AM</td>
+        <td>Study Maths (focus on difficult topics)</td>
+        <td>Self-test and quiz on Maths</td>
+    </tr>
+    <tr>
+        <td>10:00 AM - 11:00 AM</td>
+        <td>Study History (focus on difficult topics)</td>
+        <td>Self-test and quiz on History</td>
+    </tr>
+    <tr>
+        <td>7:00 PM - 8:00 PM</td>
+        <td>Study Physics</td>
+        <td>Self-test and quiz on Physics</td>
+    </tr>
+    <tr>
+        <td>8:00 PM - 9:00 PM</td>
+        <td>Study Biology</td>
+        <td>Self-test and quiz on Biology</td>
+    </tr>
+    <tr>
+        <td>9:00 PM - 10:00 PM</td>
+        <td>Study Chemistry</td>
+        <td>Self-test and quiz on Chemistry</td>
+    </tr>
+</table>
+
+<script>
+    const timetable = {
+        "Monday": [
+            { time: "5:00 AM - 5:45 AM", subject: "Maths" },
+            { time: "5:45 AM - 6:30 AM", subject: "Homework for Monday's subjects" },
+            { time: "7:00 PM - 8:00 PM", subject: "Homework for Tuesday's subjects" },
+            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Monday" },
+            { time: "8:30 PM - 9:00 PM", subject: "Study History" },
+            { time: "9:00 PM - 10:00 PM", subject: "Study Physics and Biology" },
+        ],
+        "Tuesday": [
+            { time: "5:00 AM - 5:45 AM", subject: "History" },
+            { time: "5:45 AM - 6:30 AM", subject: "Homework for Tuesday's subjects" },
+            { time: "7:00 PM - 8:00 PM", subject: "Homework for Wednesday's subjects" },
+            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Tuesday" },
+            { time: "8:30 PM - 9:00 PM", subject: "Study Biology" },
+            { time: "9:00 PM - 10:00 PM", subject: "Study Maths and Chemistry" },
+        ],
+        "Wednesday": [
+            { time: "5:00 AM - 5:45 AM", subject: "Physics" },
+            { time: "5:45 AM - 6:30 AM", subject: "Homework for Wednesday's subjects" },
+            { time: "7:00 PM - 8:00 PM", subject: "Homework for Thursday's subjects" },
+            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Wednesday" },
+            { time: "8:30 PM - 9:00 PM", subject: "Study Chemistry" },
+            { time: "9:00 PM - 10:00 PM", subject: "Study Maths and History" },
+        ],
+        "Thursday": [
+            { time: "5:00 AM - 5:45 AM", subject: "Biology" },
+            { time: "5:45 AM - 6:30 AM", subject: "Homework for Thursday's subjects" },
+            { time: "7:00 PM - 8:00 PM", subject: "Homework for Friday's subjects" },
+            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Thursday" },
+            { time: "8:30 PM - 9:00 PM", subject: "Study Maths" },
+            { time: "9:00 PM - 10:00 PM", subject: "Study Physics and Biology" },
+        ],
+        "Friday": [
+            { time: "5:00 AM - 5:45 AM", subject: "Chemistry" },
+            { time: "5:45 AM - 6:30 AM", subject: "Homework for Friday's subjects" },
+            { time: "7:00 PM - 8:00 PM", subject: "Homework for Monday's subjects" },
+            { time: "8:00 PM - 8:30 PM", subject: "Review notes from Friday" },
+            { time: "8:30 PM - 9:00 PM", subject: "Study History" },
+            { time: "9:00 PM - 10:00 PM", subject: "Study Maths and Physics" },
+        ],
+        "Saturday": [
+            { time: "7:00 AM - 9:00 AM", subject: "Free time for personal activities and breakfast" },
+            { time: "9:00 AM - 10:00 AM", subject: "Study Maths (focus on difficult topics)" },
+            { time: "10:00 AM - 11:00 AM", subject: "Study History (focus on difficult topics)" },
+            { time: "7:00 PM - 8:00 PM", subject: "Study Physics" },
+            { time: "8:00 PM - 9:00 PM", subject: "Study Biology" },
+            { time: "9:00 PM - 10:00 PM", subject: "Study Chemistry" },
+        ],
+        "Sunday": [
+            { time: "7:00 AM - 9:00 AM", subject: "Free time for personal activities and breakfast" },
+            { time: "9:00 AM - 10:00 AM", subject: "Self-test and quiz on Maths" },
+            { time: "10:00 AM - 11:00 AM", subject: "Self-test and quiz on History" },
+            { time: "7:00 PM - 8:00 PM", subject: "Self-test and quiz on Physics" },
+            { time: "8:00 PM - 9:00 PM", subject: "Self-test and quiz on Biology" },
+            { time: "9:00 PM - 10:00 PM", subject: "Self-test and quiz on Chemistry" },
+        ]
+    };
+
+    function getCurrentSubject() {
+        const now = new Date();
+        const day = now.toLocaleDateString('en-US', { weekday: 'long' });
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+
+        let currentSubject = "No study time at the moment";
+
+        if (timetable[day]) {
+            timetable[day].forEach(slot => {
+                const [startTime, endTime] = slot.time.split(" - ").map(t => {
+                    const [hour, minute, period] = t.match(/(\d+):(\d+)\s?(AM|PM)/i).slice(1);
+                    return {
+                        hour: period.toLowerCase() === "pm" && hour !== "12" ? parseInt(hour) + 12 : parseInt(hour),
+                        minute: parseInt(minute)
+                    };
+                });
+
+                const start = startTime.hour * 60 + startTime.minute;
+                const end = endTime.hour * 60 + endTime.minute;
+                const nowMinutes = hours * 60 + minutes;
+
+                if (nowMinutes >= start && nowMinutes <= end) {
+                    currentSubject = slot.subject;
+                }
+            });
+        }
+
+        document.getElementById("currentSubject").textContent = currentSubject;
+
+        // Send notification
+        if (currentSubject !== "No study time at the moment") {
+            sendNotification(currentSubject);
+        }
+    }
+
+    function sendNotification(subject) {
+        if (Notification.permission === "granted") {
+            new Notification("Current Study Subject", {
+                body: subject,
+                icon: "https://example.com/notification-icon.png" // Optional: URL to an icon image
+            });
+        } else {
+            console.log("Notification permission not granted.");
+        }
+    }
+
+    function requestNotificationPermission() {
+        if (Notification.permission !== "granted" && Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                console.log(`Notification permission status: ${permission}`);
+                if (permission === "granted") {
+                    sendNotification("Notifications enabled! You will be notified about your study subjects.");
+                }
+            }).catch(err => {
+                console.error("Notification permission request error:", err);
+            });
+        } else {
+            console.log(`Notification permission already ${Notification.permission}.`);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        requestNotificationPermission();
+        getCurrentSubject();
+        setInterval(getCurrentSubject, 60000); // Update every minute
+    });
+</script>
+
+</body>
+</html>
