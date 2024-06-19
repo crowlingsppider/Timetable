@@ -267,25 +267,33 @@
         ]
     };
 
+    function convertTo12HourFormat(hours, minutes) {
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        return `${hours}:${minutes < 10 ? '0' + minutes : minutes} ${ampm}`;
+    }
+
     function getCurrentSubject() {
         const now = new Date();
         const day = now.toLocaleString('en-US', { weekday: 'long' });
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const time = hours + ":" + (minutes < 10 ? "0" + minutes : minutes);
         const dayTimetable = timetable[day] || [];
+        const currentTime = now.getHours() * 60 + now.getMinutes();
 
         for (let i = 0; i < dayTimetable.length; i++) {
             const [start, end] = dayTimetable[i].time.split(' - ').map(t => t.trim());
-            const startTime = new Date();
-            const endTime = new Date();
-            [startTime.setHours(...start.split(':').map(Number)), startTime.setSeconds(0)];
-            [endTime.setHours(...end.split(':').map(Number)), endTime.setSeconds(0)];
+            const [startHours, startMinutes] = start.split(':').map(Number);
+            const [endHours, endMinutes] = end.split(':').map(Number);
+            const startTime = startHours * 60 + startMinutes;
+            const endTime = endHours * 60 + endMinutes;
 
-            if (now >= startTime && now <= endTime) {
+            if (currentTime >= startTime && currentTime < endTime) {
+                console.log(`Current time: ${convertTo12HourFormat(now.getHours(), now.getMinutes())} falls between ${start} and ${end}`);
                 return dayTimetable[i].subject;
             }
         }
+
+        console.log(`No current subject for time: ${convertTo12HourFormat(now.getHours(), now.getMinutes())}`);
         return "No current subject";
     }
 
