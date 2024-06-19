@@ -289,10 +289,12 @@
         return "No current subject";
     }
 
-    document.getElementById('currentSubject').textContent = getCurrentSubject();
-    setInterval(() => {
+    document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('currentSubject').textContent = getCurrentSubject();
-    }, 60000); // Update every minute
+        setInterval(() => {
+            document.getElementById('currentSubject').textContent = getCurrentSubject();
+        }, 60000); // Update every minute
+    });
 </script>
 
 </body>
