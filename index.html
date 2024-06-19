@@ -282,12 +282,12 @@
 
         for (let i = 0; i < dayTimetable.length; i++) {
             const [start, end] = dayTimetable[i].time.split(' - ').map(t => t.trim());
-            const [startHours, startMinutes] = start.split(':').map(Number);
-            const [endHours, endMinutes] = end.split(':').map(Number);
-            const startTime = startHours * 60 + startMinutes;
-            const endTime = endHours * 60 + endMinutes;
+            const [startHours, startMinutes] = start.split(':').map(t => parseInt(t));
+            const [endHours, endMinutes] = end.split(':').map(t => parseInt(t));
+            const startTotalMinutes = (start.includes("PM") && startHours !== 12 ? startHours + 12 : startHours % 12) * 60 + startMinutes;
+            const endTotalMinutes = (end.includes("PM") && endHours !== 12 ? endHours + 12 : endHours % 12) * 60 + endMinutes;
 
-            if (currentTime >= startTime && currentTime < endTime) {
+            if (currentTime >= startTotalMinutes && currentTime < endTotalMinutes) {
                 console.log(`Current time: ${convertTo12HourFormat(now.getHours(), now.getMinutes())} falls between ${start} and ${end}`);
                 return dayTimetable[i].subject;
             }
