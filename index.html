@@ -303,6 +303,17 @@
             document.getElementById('currentSubject').textContent = getCurrentSubject();
         }, 60000); // Update every minute
     });
+    function showCurrentSubject() {
+    const currentSubject = getCurrentSubject();
+    document.getElementById('currentSubject').textContent = currentSubject;
+    if (Notification.permission === 'granted') {
+        new Notification('Current Subject to Study', {
+            body: currentSubject,
+            icon: 'path/to/icon.png'  // Optional
+        });
+    }
+}
+
 </script>
 
 </body>
